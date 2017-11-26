@@ -1,0 +1,13 @@
+
+.usertab {width:100%;}
+.usertab th,.usertab td {font-weight:normal;font-size:13px;padding:4px 5px;}
+.usertab img {
+    width: 80px;
+    height: 80px;
+    border: solid 1px #eee;
+    border-radius: 300%;
+    padding: 5px;
+    margin-bottom:7px;
+}
+
+.usertab th {color:#888;text-align:right;}

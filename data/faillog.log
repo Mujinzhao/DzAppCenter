@@ -1,0 +1,48 @@
+Array
+(
+    [data] => c2l0ZXVuaXF1ZWlkPVJDRkpOMWY0ZGRoQWljeVkmc2l0ZXVybD1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBODg4OCUyRmRpc2N1eiUyRiZzaXRldmVyPVgzLjIvMjAxNjA2MDEmc2l0ZWNoYXJzZXQ9dXRmLTgmbXlzaXRlaWQ9
+    [md5hash] => d2439595
+    [timestamp] => 1511488014
+    [from] => s
+    [mod] => app
+    [ac] => faillog
+    [rid] => 100
+    [type] => 105
+    [serverinfo] => nginx/1.4.7
+)
+Array
+(
+    [data] => c2l0ZXVuaXF1ZWlkPVJDRkpOMWY0ZGRoQWljeVkmc2l0ZXVybD1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBODg4OCUyRmRpc2N1eiUyRiZzaXRldmVyPVgzLjIvMjAxNjA2MDEmc2l0ZWNoYXJzZXQ9dXRmLTgmbXlzaXRlaWQ9
+    [md5hash] => e2e6a180
+    [timestamp] => 1511488107
+    [from] => s
+    [mod] => app
+    [ac] => faillog
+    [rid] => 100
+    [type] => 105
+    [serverinfo] => nginx/1.4.7
+)
+Array
+(
+    [data] => c2l0ZXVuaXF1ZWlkPVJDRkpOMWY0ZGRoQWljeVkmc2l0ZXVybD1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBODg4OCUyRmRpc2N1eiUyRiZzaXRldmVyPVgzLjIvMjAxNjA2MDEmc2l0ZWNoYXJzZXQ9dXRmLTgmbXlzaXRlaWQ9
+    [md5hash] => 49973e48
+    [timestamp] => 1511489433
+    [from] => s
+    [mod] => app
+    [ac] => faillog
+    [rid] => 1
+    [type] => 100
+    [serverinfo] => nginx/1.4.7
+)
+Array
+(
+    [data] => c2l0ZXVuaXF1ZWlkPVJDRkpOMWY0ZGRoQWljeVkmc2l0ZXVybD1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBODg4OCUyRmRpc2N1eiUyRiZzaXRldmVyPVgzLjIvMjAxNjA2MDEmc2l0ZWNoYXJzZXQ9dXRmLTgmbXlzaXRlaWQ9
+    [md5hash] => 3c667135
+    [timestamp] => 1511489449
+    [from] => s
+    [mod] => app
+    [ac] => faillog
+    [rid] => 1
+    [type] => 100
+    [serverinfo] => nginx/1.4.7
+)

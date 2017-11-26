@@ -1,0 +1,7 @@
+/* 面包屑导航 */
+.posul {display:inline-block;margin:0;padding:0;}
+.posul li {list-style-type:none;margin:0;padding:0;float:left;line-height:20px;color:#666;font-size:12px;}
+.posul li a {text-decoration:none;color:#666;}
+.posul li a:hover {color:#333;}
+
+

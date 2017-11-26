@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>DZ应用中心</title>
+  <link rel="icon" type="image/png" href="{$setting[favicon]}">
+  <link type="text/css" rel="stylesheet" href="template/libs/mwt/4.0/mwt.min.css">
+  <link type="text/css" rel="stylesheet" href="template/src/base.css">
+  <script type="text/javascript" src="template/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="template/libs/mwt/4.0/mwt.min.js"></script>
+  <script type="text/javascript" src="template/libs/requirejs/2.1.9/require.js"></script>
+  <script type="text/javascript" src="template/src/japp.js" charset="utf-8"></script>
+</head>
+<body>
+  <div id="header">
+    <div class="wp">
+      <div class="col-left">
+        <a class="toplogo" href="#/"><span>DZ应用中心</span></a>
+      </div>
+    </div>
+  </div>
+  <div id="mainbody" class="wp" style="min-height:450px;"></div>
+  <div id="footer">
+    Copyright &copy; mawentao.com 2016-2017
+  </div>
+<script> 
+  var dz = {
+      ajaxapi: 'api.php?mod=',
+      client_siteurl: '<?php echo $siteurl ?>',
+      client_siteuniqueid: '<?php echo $siteuniqueid ?>'
+  };
+  function active_top_nav(mod) {
+  }
+  var japp=new JApp('template/src/');
+  japp.init();
+</script> 
+</body>
+</html>

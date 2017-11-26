@@ -1,0 +1,29 @@
+.wp {margin:0 auto;width:1000px;}
+#header {position:relative;height:70px;line-height:70px;width:100%;background-color:#2596bb;}
+#header>.col-left,#header>.col-right {display:inline-block;min-width:50px;height:100%;margin:0 20px;}
+#header>.col-left {float:left;}
+#header>.col-right {float:right;}
+
+.toplogo {display:inline-block;color:#fcfcfc;font-size:18px;text-decoration:none;font-weight:bold;letter-spacing:1px;}
+
+#footer { background:#067296;text-align:center;padding:30px 0;font-size:12px;color:#eee;}
+
+.cl {margin:10px 0;}
+.cl h2 {display:inline-block;margin:0;padding: 5px 0;border-left: solid 6px #F60;
+    padding-left: 12px;font-size: 15px;color: #333;
+}
+.cl .mwt-search-bar {display:inline-block;float:right;}
+
+.pxl{ line-height:36px; height:38px; background:#f7f7f7; border:#ddd 1px solid; margin-bottom:10px;}
+.pxl span a{ float:left; padding:0 15px; border-right:#ddd 1px solid;text-decoration:none;font-size:12px;color:#333;}
+.pxl span a.a, .pxl span a:hover { color:#f60; background:#fff;font-weight:bold;}
+.pxl em{ float:right; padding-right:10px;}
+.pxl em input{ vertical-align:middle; margin:0 2px 0 10px;}
+.pxl b{ float:right;}
+.pxl b a{ border-left:#ddd 1px solid; display:inline; float:left; width:40px; text-indent:-999em; background-image:url(../dfbar/img/xs.gif); background-repeat:no-repeat;}
+.pxl b a.xs1{ background-position: center 0;}
+.pxl b a.xs2{ background-position: center -42px;}
+.pxl b a.xs1:hover{ background-position: center -84px;}
+.pxl b a.xs2:hover{ background-position: center -126px;}
+.pxl b a.xs1_s{ background-position: center -168px; background-color:#fff;}
+.pxl b a.xs2_s{ background-position: center -210px; background-color:#fff;}

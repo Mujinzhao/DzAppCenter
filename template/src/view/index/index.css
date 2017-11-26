@@ -1,0 +1,36 @@
+/* 首页样式 */
+.wp {width:97%;margin:10px auto;}
+.wall {border:1px solid #e7e8ea;background:#fff;min-height:400px;padding:15px 20px;}
+.wptab {width:100%;}
+.wptab td {vertical-align:top;}
+
+.mwt-nav li span {font-size:12px;font-weight: bold;color: #707701;display:inline-block;padding:6px 15px 0;}
+
+.mwt-nav .more {float:right;}
+.mwt-nav .more a {color:#777;padding:5px;}
+
+/*
+.panel {background:#FFF;padding:10px 20px;border:1px solid #e6e6e6;}
+.panel-head {
+	line-height: 30px;
+    border-bottom: solid 1px #e6e6e6;
+    font-size: 13px;
+    color: #333;
+}
+.panel-body {
+	padding: 10px 0 15px;
+	font-size: 13px;
+}
+.panel-body .content {
+	font-size:12px;
+	color:#777;
+}
+
+.introduction-img {width:100%;}
+*/
+
+.listab {width:100%}
+.listab tr,.listab th,.listab td{border:none;padding:5px 10px;}
+
+
+

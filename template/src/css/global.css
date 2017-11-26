@@ -1,0 +1,86 @@
+/* global css */
+* {
+    box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -icab-box-sizing: border-box;
+    -khtml-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+}
+body {background:#fff;}
+/* Logo */
+#header {height:50px;border-bottom:solid 1px #ddd;background-color:#fff;}
+.logo {float:left;display:inline-block;height:50px;line-height:50px;padding-left:10px;color:#999;text-decoration:none;}
+.logo img {height:20px;float:left;margin:15px 15px 0 0;} 
+.logo .title {font:15px 'heiti';display:inline-block;border-left:solid 1px #ddd;padding-left:14px;color:#fff;
+	white-space:nowrap;line-height:24px;}
+/* 语言选择 */
+.langul {display:inline-block;margin:0 0 0 10px;padding:0;}
+.langul li {list-style-type:none;padding:0;float:left;}
+.langul li a {text-decoration:none;font-size:12px;color:#888;padding:0 5px;}
+.langul li a:hover {color:red;}
+
+/* 导航菜单 */
+#header .nav {display:inline-block;height:50px;padding-left:20px;}
+.menu {margin:0 10px 0 0;padding:0;display:inline-block;height:50px;vertical-align:middle;}
+.menu li {list-style-type:none;margin:1px 5px;padding:0;float:left;line-height:48px;position:relative;}
+.menu li a {text-decoration:none;color:#fff;font-size:14px;display:block;padding:0 5px;color:#aaa;}
+.menu li a::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: all .2s ease-in-out;
+}
+.menu li.active a,.menu li a:hover {color:#000;}
+.menu li.active a::before,.menu li:hover a::before {
+/*    transform: scaleX(1);
+    background: rgba(255,255,255,1);
+    transition: all .2s ease-in-out;*/
+}
+.menu li.sep {color:#aaa}
+.menu li.sep:after {content:'';}
+
+/* 子菜单 */
+    .menu-sub{}
+    .menu-sub-ul {display:none;position:absolute;top:40px;left:10px;border:solid 1px #eee;z-index:999;
+        background:#fff;list-style: none;padding: 5px 15px;
+        -webkit-box-shadow: 2px 2px #aaa;
+        -moz-box-shadow: 2px 2px #aaa;
+        box-shadow: 2px 2px #aaa;
+    }
+    .menu-sub:hover+ul, .menu-sub-ul:hover { display:block; }
+    .menu-sub-ul>li { display:block;position:relative;float:none;line-height:30px; }
+    .menu-sub-ul>li>a { display:block;padding:0;font-size:13px;color:#333;white-space:nowrap;}
+    .menu-sub-ul>li>a.active,.menu-sub-ul>li>a:hover {color: #FC8B1C;}
+
+.userbtn {text-decoration:none;color:#aaa;font-size:14px;position:relative;display:inline-block;line-height:50px;}
+.userbtn i {font-size:18px;vertical-align: text-bottom;margin-right:3px;}
+.userbtn:hover {color:#333;}
+
+.submenudiv {display:none;position:absolute;top:45px;right:5px;border:solid 1px #ddd;width:150px;background:#fff;z-index:999;}
+.userbtn:hover+.submenudiv {display:block;}
+.submenudiv:hover {display:block;}
+.submenudiv a {text-decoration:none;color:#999;font-size:14px;}
+.submenudiv a:hover {color:#333;}
+
+.btn {display:inline-block;text-decoration:none;font-size:13px;padding:5px 20px 6px;background:#1E7BD2;cursor:pointer;color:#fff;}
+.btn:hover {color:#1E7BD2;background-color:#fff;    
+	-webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.ctlgrid {position:absolute;top:36px;left:10px;right:10px;bottom:10px;}
+
+.grida {text-decoration:none;color:#0087C3;}
+.grida:hover {text-decoration:underline;}
+
