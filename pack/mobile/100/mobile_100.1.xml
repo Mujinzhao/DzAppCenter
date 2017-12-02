@@ -2,12 +2,12 @@
 <root>
 	<item id="Title"><![CDATA[Discuz! File Pack]]></item>
 	<item id="Version"><![CDATA[1]]></item>
-	<item id="Date"><![CDATA[1511426237]]></item>
+	<item id="Date"><![CDATA[1511938413]]></item>
 	<item id="Data">
 		<item id="part"><![CDATA[1/1]]></item>
 		<item id="type"><![CDATA[plugin]]></item>
 		<item id="key"><![CDATA[mobile]]></item>
-		<item id="dateline"><![CDATA[1511426237]]></item>
+		<item id="dateline"><![CDATA[1511938413]]></item>
 		<item id="version"><![CDATA[1.0]]></item>
 		<item id="files">
 			<item id="api/1/buyattachment.php">

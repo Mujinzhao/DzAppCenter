@@ -7,7 +7,7 @@ define(function(require){
             {text:'最新排序',value:'ctime'},
             {text:'更新排序',value:'mtime'}
         ];
-        var bar = '<div class="pxl cl"><span>';
+        var bar = '<div class="pxl cl" style="margin-bottom:0px;"><span>';
         for (var i=0;i<sortopts.length;++i) {
             var im = sortopts[i];
             var a = i==0 ? ' class="a"' : '';
@@ -25,7 +25,7 @@ define(function(require){
               '<button class="submit" id="sobtn" style="background:'+color+';border-color:'+color+';font-size:13px;">搜索</button>'+
             '</div>'+
           '</div>'+bar+
-        '<div id="grid-'+domid+'" style="margin-top:10px;"></div>';
+        '<div id="grid-'+domid+'" style="margin-top:-1px;border:solid 1px #ddd;min-height:350px;margin-bottom:15px;"></div>';
         jQuery('#'+domid).html(code);
         require('./grid').init('grid-'+domid);
 	};

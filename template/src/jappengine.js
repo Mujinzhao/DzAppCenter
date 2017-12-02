@@ -5,6 +5,9 @@ define(function(require){
 	// 注册controller配置(所有controller必须在此配置)
 	var controller_confs = [
 		require('controller/plugins').conf,			//!< 插件
+        require('controller/help').conf,			//!< 帮助
+        require('controller/admin').conf,			//!< 应用列表管理
+        require('controller/adminapp').conf,		//!< 应用详情管理
 		require('controller/index').conf			//!< 首页
 	];
 

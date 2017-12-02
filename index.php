@@ -13,17 +13,24 @@ define('CURMODULE', $mod);
 
 $core->init();
 
+/////////////////////////////////////////////////////////////////////////////////
 // 获取应用图标
 if (count($_G['input'])==1) {
     $keys = array_keys($_G['input']);
     $appKey = $keys[0];
     if ($_G['input'][$appKey]=='' && strpos($appKey,'_')===0) {
         $appKey = substr($appKey,1);
-        $url = "http://addon.discuz.com/resource/plugin/$appKey.png";
+        $url = "http://addon.discuz.com/?_$appKey";
+        // 如果本地上传了优先用本地上传的
+        $appLogoInfo = C::m('applogo')->getLogoInfo($appKey);
+        if (is_file($appLogoInfo['img_file'])) {
+            $url = $appLogoInfo['img_url'];
+        }
         header("Location:$url");
         exit(0);
     }
 }
+/////////////////////////////////////////////////////////////////////////////////
 
 //通用参数
 if (!empty($_G['input']['data']) && !empty($_G['input']['md5hash']) && !empty($_G['input']['timestamp'])) {

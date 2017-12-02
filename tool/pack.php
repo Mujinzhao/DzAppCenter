@@ -17,7 +17,7 @@ function init_discuz_context() {
     $core->init();
     ini_set('date.timezone','Asia/Shanghai');
 }
-
+/*
 function pack_app_zip($appkey,$rid,$zipfile)
 {
     //1. 获取pack info
@@ -53,6 +53,7 @@ function pack_app_zip($appkey,$rid,$zipfile)
     C::t('dzapp_pack')->updateStatus($rid,0);   //!< 打包成功后状态置为上架
     echo "PACK SUCCESS: ".DISCUZ_ROOT."pack/$appkey/$rid [version:$appVersion]\n";
 }
+*/
 
 if (__FILE__ == realpath($_SERVER['SCRIPT_FILENAME']))
 {
@@ -75,7 +76,11 @@ if (__FILE__ == realpath($_SERVER['SCRIPT_FILENAME']))
         if (!is_numeric($rid)) {
             throw "unknow rid [$rid]";        
         }
-        pack_app_zip($appkey,$rid,$zipfile);
+        // pack
+        C::m('apppack')->pack_app_zip($rid,$zipfile);
+        echo "PACK SUCCESS: ".DISCUZ_ROOT."pack/$appkey/$rid\n";
+
+        //pack_app_zip($appkey,$rid,$zipfile);
     } catch (Exception $e) {
         $log = $e->getMessage();
         die("[ERROR]: $log\n");

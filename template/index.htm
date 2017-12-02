@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>DZ应用中心</title>
-  <link rel="icon" type="image/png" href="{$setting[favicon]}">
+  <link rel="icon" type="image/png" href="template/static/favicon.ico">
   <link type="text/css" rel="stylesheet" href="template/libs/mwt/4.0/mwt.min.css">
   <link type="text/css" rel="stylesheet" href="template/src/base.css">
   <script type="text/javascript" src="template/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="template/libs/jquery/1.11.2/ajaxfileupload.js"></script>
   <script type="text/javascript" src="template/libs/mwt/4.0/mwt.min.js"></script>
   <script type="text/javascript" src="template/libs/requirejs/2.1.9/require.js"></script>
   <script type="text/javascript" src="template/src/japp.js" charset="utf-8"></script>
@@ -19,6 +20,17 @@
       <div class="col-left">
         <a class="toplogo" href="#/"><span>DZ应用中心</span></a>
       </div>
+      <!--导航菜单-->
+      <div class="col-right">
+        <ul class="menuul">
+          <li>
+            <a id="navmenu-plugins" name="navmenu" href="#/plugins">应用列表</a>
+          </li>
+          <li>
+            <a id="navmenu-help" name="navmenu" href="#/help">帮助</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
   <div id="mainbody" class="wp" style="min-height:450px;"></div>
@@ -27,11 +39,14 @@
   </div>
 <script> 
   var dz = {
+      siteurl: '<?php echo $_G["siteurl"] ?>',
       ajaxapi: 'api.php?mod=',
       client_siteurl: '<?php echo $siteurl ?>',
       client_siteuniqueid: '<?php echo $siteuniqueid ?>'
   };
   function active_top_nav(mod) {
+      jQuery('[name="navmenu"]').removeClass('active');
+      jQuery('#navmenu-'+mod).addClass('active');
   }
   var japp=new JApp('template/src/');
   japp.init();

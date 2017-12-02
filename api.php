@@ -6,7 +6,7 @@ $core = &core::instance();
 $core->init();
 
 $modules = array (
-    'plugin',
+    'plugin','admin','upload',
 );
 $mod = isset($_G['input']['mod']) ? $_G['input']['mod'] : '';
 if(!in_array($mod, $modules)) {
@@ -33,7 +33,6 @@ function module_not_exists()
 
 function api_result(array $result,$json_header=true)
 {
-    header("Content-type: application/json");
     if (!isset($result['retcode'])) {
         $result['retcode'] = 0;
     }   
@@ -71,16 +70,18 @@ class validate
 	public static function getNCParameter($key, $name, $valueType='string', $maxlen=1024)
 	{
 		//1. 检查字段是否设置
-		if (!isset($_REQUEST[$key])) {
+		if (!isset($_REQUEST[$key]) && !isset($_FILES[$key])) {
 			$msg = $key." is not set.";
 			throw new Exception($msg);
 			return null;
 		}
 
 		//2. 去首尾空格
-		$value = trim($_REQUEST[$key]);
-		$value = self::post_decode($value); //!< 转义字符解码
-		$_REQUEST[$key] = $value;
+        if (isset($_REQUEST[$key])) {
+		    $value = trim($_REQUEST[$key]);
+		    $value = self::post_decode($value); //!< 转义字符解码
+		    $_REQUEST[$key] = $value;
+        }
 
 		//3. 根据数据类型检查
 		$res = true;
@@ -90,6 +91,7 @@ class validate
 			case "integer" : $res = self::checkInteger($value); break;
 			case "url"     : $res = self::checkUrl($key, $maxlen); break;
 			case "email"   : $res = self::checkEmail($key); break;
+            case "file"    : return self::checkUploadFile($key,$maxlen); break;
 			default:
 				if (preg_match($valueType, $value)) {
 					$res = true;
@@ -185,6 +187,46 @@ class validate
 		}
 		return true;
 	}/*}}}*/
+
+    // 验证上传的文件
+    private static function checkUploadFile($fileid,$maxsize)
+    {/*{{{*/
+        $upfile = $_FILES[$fileid];
+        if ($upfile["error"]!==0) {
+            $err = $upfile["error"];
+            $errMap = array(
+                '1' => '文件大小超出服务器空间大小',
+                '2' => '文件超出浏览器限制大小',
+                '3' => '文件仅部分被上传',
+                '4' => '未找到要上传的文件',
+                '5' => '服务器临时文件丢失',
+                '6' => '文件写入到临时文件出错',
+            );
+            $errMsg = isset($errMap[$err]) ? $errMap[$err] : "文件未上传或上传失败";
+            throw new Exception($errMsg);
+        }
+        if ($maxsize>0 && $upfile['size'] > $maxsize) {
+            throw new Exception('文件大小不能超过'.self::get_file_size_string($maxsize));
+        }  
+        return $upfile;
+    }/*}}}*/
+
+    // 获取文件大小格式化显示
+    public static function get_file_size_string($size)
+    {/*{{{*/
+        if ($size<1024) return $size." B";
+        if ($size<1024*1024) {
+            $s = floatval($size) / 1024;
+            return number_format($s, 2)." KB";
+        }   
+        if ($size<1024*1024*1024) {
+            $s = floatval($size) / (1024*1024);
+            return number_format($s, 2)." MB";
+        }   
+        $s = floatval($size) / (1024*1024*1024);
+        return number_format($s, 2)." GB";
+    }/*}}}*/
+
 }
 // vim600: sw=4 ts=4 fdm=marker syn=php
 

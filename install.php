@@ -53,6 +53,7 @@ $sql = "CREATE TABLE IF NOT EXISTS $table ".<<<EOF
 (
 `rid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT 'APP PACK ID',
 `appkey`  varchar(64) NOT NULL DEFAULT '' COMMENT 'APP标识符', 
+`packname` varchar(64) NOT NULL DEFAULT '' COMMENT '版本名称',
 `version` varchar(64) NOT NULL DEFAULT '' COMMENT '版本号',
 `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态(0:上架,1:下架)',
 `ctime` datetime NOT NULL DEFAULT "0000-00-00 00:00:00" comment '创建日期',
@@ -65,8 +66,8 @@ KEY `idx_status_isdel` (`status`,`isdel`)
 ) ENGINE=MyISAM COMMENT 'dzapp安装包表'
 EOF;
 DB::query($sql);
-$sql = "INSERT IGNORE INTO $table (rid,appkey,version,status,ctime) VALUES ".<<<EOF
-(100,'mobile','1.0','0','$addtime')
+$sql = "INSERT IGNORE INTO $table (rid,appkey,packname,version,status,ctime) VALUES ".<<<EOF
+(100,'mobile','官方版','1.0','0','$addtime')
 EOF;
 DB::query($sql);
 /*}}}*/

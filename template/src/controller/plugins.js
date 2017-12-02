@@ -13,6 +13,10 @@ define(function(require){
 		]
 	};
 
+    function before_action() {
+        active_top_nav('plugins');
+    }
+
 	// 插件列表页
 	o.indexAction=function(erurl) {
         require('view/plugins/list/page').execute('mainbody',erurl.getQuery());

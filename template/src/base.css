@@ -1,8 +1,29 @@
 .wp {margin:0 auto;width:1000px;}
 #header {position:relative;height:70px;line-height:70px;width:100%;background-color:#2596bb;}
-#header>.col-left,#header>.col-right {display:inline-block;min-width:50px;height:100%;margin:0 20px;}
-#header>.col-left {float:left;}
-#header>.col-right {float:right;}
+#header .col-left,#header .col-right {display:inline-block;min-width:50px;height:100%;margin:0 20px;}
+#header .col-left {float:left;}
+#header .col-right {float:right;}
+
+/* 页头-导航菜单 */
+.menuul {display:inline-block;margin:0;padding:0;line-height:10px;} 
+.menuul>li {list-style-type:none;margin:0 2px;padding:0;float:left;position:relative;}
+.menuul>li>a {text-decoration:none;color:#fff;font-size:14px;padding:27px 20px;cursor:pointer;}
+.menuul>li>a:hover,.menuul li a.active {text-decoration:none;color:#ff0;background-color:#067296;border-radius:0px;}
+.menuul>li a i {margin-right:3px;}
+.menuul>li>a i.fa-angle-down {margin-left:4px;font-size:16px;vertical-align:middle;display:inline;}
+.menuul>li a.avatar {color:#7ee400;}
+.menuul>li a.avatar>i {font-size:18px;vertical-align:middle;margin-right:5px;}
+
+/* 子菜单 */
+.menu-sub{}
+.menu-sub-ul {display:none;position:absolute;top:25px;left:5px;border:solid 1px #666;z-index:999;
+    background:#333;list-style:none;padding:5px 15px;box-shadow:0px 0px 2px #999;
+}
+.menu-sub:hover+ul, .menu-sub-ul:hover { display:block; }
+.menu-sub-ul>li { display:block;position:relative;float:none;line-height:30px; }
+.menu-sub-ul>li>a { display:block;padding:0;font-size:13px;color:#fff;white-space:nowrap;text-decoration:none;}
+.menu-sub-ul>li>a.active,.menu-sub-ul>li>a:hover {color: #7ee400;}
+
 
 .toplogo {display:inline-block;color:#fcfcfc;font-size:18px;text-decoration:none;font-weight:bold;letter-spacing:1px;}
 
@@ -27,3 +48,61 @@
 .pxl b a.xs2:hover{ background-position: center -126px;}
 .pxl b a.xs1_s{ background-position: center -168px; background-color:#fff;}
 .pxl b a.xs2_s{ background-position: center -210px; background-color:#fff;}
+
+/* app列表页 */
+.app-list-ul {list-style:none;margin:0;padding:0;}
+.app-list-ul li {
+    padding: 15px 20px 20px 30px;
+    border-bottom: 1px solid #e5e4e4;
+}
+.app-list-ul img {vertical-align:top;width:48px;height:48px;margin-right:10px;}
+.app-info {
+    display: inline-block;
+    vertical-align: middle;
+    width: 700px;
+    margin: 0 20px 0 15px;
+    font-family: '\5fae\8f6f\96c5\9ed1';
+}
+.app-name {font-size:14px;}
+.app-desc {font-size:12px;color:gray;margin:7px 0;}
+.app-btn {padding:5px 30px;float:right;margin:5px;}
+
+/* 帮助页 */
+h3 {font-size:14px;margin:15px 0 10px 0;color:#FF5722;font-weight:normal;}
+.wall {font-size:13px;background:#f2f2f2;padding:20px;border-radius:2px;}
+.wall a {color:#048DC5;}
+.code {margin:5px 0;font-family:'menlo','Courier New';background: #333;color:#ddd;padding:15px;}
+
+.grida {text-decoration:none;color:#369;}
+.grida:hover {text-decoration:underline;}
+
+/* 管理页 */
+.cl2 {padding-left:182px;margin:10px 0;}
+.cl2:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.cl2 .sd {display: inline;float: left;margin-left: -182px;width: 172px;
+    border: 1px solid #E6E6E6; padding:10px 0 15px;
+    background: #F8F8F8;
+    box-shadow: 0 2px 3px rgba(220, 220, 220, 0.5);
+    border-radius: 4px;
+}
+.cl2 .mn {
+    float: right;width: 100%; padding:0 15px;
+    min-height:300px;border:solid 1px #E4E8F1;border-radius:4px;box-shadow: 0 2px 3px rgba(220, 220, 220, 0.5);
+}
+.sd .head {font-size:14px;border-bottom:solid 1px #E6E6E6;padding: 0 15px 10px;font-weight:bold;color:#555;}
+.sd .sdul {border-top:solid 1px #fff;margin:0;padding:0 15px;}
+.sd .sdul li {border-bottom:dashed 1px #ddd;list-style:none;padding:10px 0;}
+.sd .sdul li a {text-decoration:none;color:#333;font-size:13px;}
+.sd .sdul li a:hover {text-decoration:underline;}
+
+.mwt-grid .applogo {width:48px;height:48px;cursor:pointer;}
+.mwt-grid .appname {font-weight:bold;font-size:12px;color:#369;}
+.mwt-grid .appdesc {font-size:12px;color:gray;margin-top:5px;}
+
+

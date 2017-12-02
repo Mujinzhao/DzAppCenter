@@ -46,3 +46,39 @@ Array
     [type] => 100
     [serverinfo] => nginx/1.4.7
 )
+Array
+(
+    [data] => c2l0ZXVuaXF1ZWlkPVJDRkpOMWY0ZGRoQWljeVkmc2l0ZXVybD1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBODg4OCUyRmRpc2N1eiUyRiZzaXRldmVyPVgzLjIvMjAxNjA2MDEmc2l0ZWNoYXJzZXQ9dXRmLTgmbXlzaXRlaWQ9
+    [md5hash] => 062f0b88
+    [timestamp] => 1511744945
+    [from] => s
+    [mod] => app
+    [ac] => faillog
+    [rid] => 100
+    [type] => 105
+    [serverinfo] => nginx/1.4.7
+)
+Array
+(
+    [data] => c2l0ZXVuaXF1ZWlkPVJDRkpOMWY0ZGRoQWljeVkmc2l0ZXVybD1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBODg4OCUyRmRpc2N1eiUyRiZzaXRldmVyPVgzLjIvMjAxNjA2MDEmc2l0ZWNoYXJzZXQ9dXRmLTgmbXlzaXRlaWQ9
+    [md5hash] => 4517676e
+    [timestamp] => 1511744950
+    [from] => s
+    [mod] => app
+    [ac] => faillog
+    [rid] => 100
+    [type] => 105
+    [serverinfo] => nginx/1.4.7
+)
+Array
+(
+    [data] => c2l0ZXVuaXF1ZWlkPVJDRkpOMWY0ZGRoQWljeVkmc2l0ZXVybD1odHRwJTNBJTJGJTJGbG9jYWxob3N0JTNBODg4OCUyRmRpc2N1eiUyRiZzaXRldmVyPVgzLjIvMjAxNjA2MDEmc2l0ZWNoYXJzZXQ9dXRmLTgmbXlzaXRlaWQ9
+    [md5hash] => 3500a6bd
+    [timestamp] => 1511744961
+    [from] => s
+    [mod] => app
+    [ac] => faillog
+    [rid] => 101
+    [type] => 105
+    [serverinfo] => nginx/1.4.7
+)

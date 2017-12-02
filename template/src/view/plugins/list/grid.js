@@ -12,12 +12,19 @@ define(function(require){
         for (var i=0;i<n;++i) {
             var im = store.get(i);
             var installUrl = im.installUrl;
-            var code = '<li>'+im.appname+
-                '<a href="'+installUrl+'" class="mwt-btn mwt-btn-success mwt-btn-sm">安装</a>'+
+            var appname = im.appname;
+            var code = '<li>'+
+                '<img src="?_'+im.appkey+'" title="'+appname+'">'+
+                '<div class="app-info">'+
+                   '<span class="app-name">'+appname+' ('+im.appkey+')</span>'+
+                   '<p class="app-desc">'+im.appdesc+'</p>'+
+                '</div>'+
+                '<a href="'+installUrl+'" class="mwt-btn mwt-btn-success mwt-btn-sm app-btn">'+
+                    '<i class="icon icon-download"></i>&nbsp;&nbsp;安装</a>'+
             '</li>';
             lis.push(code);
         }
-        var code = '<ul>'+lis.join('')+'</ul>';
+        var code = '<ul class="app-list-ul">'+lis.join('')+'</ul>';
         jQuery('#'+gridid).html(code);
     }
 
@@ -25,7 +32,7 @@ define(function(require){
     
     o.init = function(domid){
         var code = '<div id="grid-'+domid+'"></div>'+
-                   '<div id="pagebar-'+domid+'"></div>';
+                   '<div id="pagebar-'+domid+'" style="margin-top:15px;"></div>';
         jQuery('#'+domid).html(code);
         gridid = 'grid-'+domid;
         store = new mwt.Store({
@@ -36,8 +43,10 @@ define(function(require){
             })
         });
         pagebar = new MWT.PageBar({
-            render: 'pagebar-'+domid,
-            store: store
+            render    : 'pagebar-'+domid,
+            pageStyle : 2,
+            pageSize  : 30,
+            store     : store
         });
         store.on('load',showList);
 

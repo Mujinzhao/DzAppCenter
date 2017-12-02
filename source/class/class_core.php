@@ -62,6 +62,17 @@ class core {
         return self::_make_obj($name, 'table');
     }
 
+    public static function m($name) {
+        $cname = 'module_'.$name;
+        if (!isset(self::$_tables[$cname])) {
+            if (!class_exists($cname,false)) {
+                self::import("module/$name");
+            }
+            self::$_tables[$cname] = new $cname();
+        }
+        return self::$_tables[$cname];
+    }
+
     protected static function _make_obj($name, $type, $extendable = false, $p = array()) 
     {/*{{{*/
         $pluginid = null;
