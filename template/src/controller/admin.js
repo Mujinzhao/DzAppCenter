@@ -15,6 +15,15 @@ define(function(require){
 	};
 
 	function before_action() {
+        require('./login').check();
+/*
+        if (dz.uid==0) {
+//            mwt.alert('请先登录',function(){
+//                alert('todo');
+//            });
+            return;
+        }
+*/
         var code = '<div class="cl2">'+
             '<div class="sd">'+
               '<div class="head">应用管理</div>'+

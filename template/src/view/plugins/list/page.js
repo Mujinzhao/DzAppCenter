@@ -25,7 +25,7 @@ define(function(require){
               '<button class="submit" id="sobtn" style="background:'+color+';border-color:'+color+';font-size:13px;">搜索</button>'+
             '</div>'+
           '</div>'+bar+
-        '<div id="grid-'+domid+'" style="margin-top:-1px;border:solid 1px #ddd;min-height:350px;margin-bottom:15px;"></div>';
+        '<div id="grid-'+domid+'" style="margin-top:-1px;border:solid 1px #ddd;min-height:350px;margin-bottom:15px;background:#fff;"></div>';
         jQuery('#'+domid).html(code);
         require('./grid').init('grid-'+domid);
 	};

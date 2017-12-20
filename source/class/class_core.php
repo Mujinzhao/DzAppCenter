@@ -302,18 +302,19 @@ class core {
             if ($auth = getglobal('auth', 'cookie')) {
                 $auth = daddslashes(explode("\t", authcode($auth, 'DECODE')));
             }
-            list($discuz_pw, $discuz_uid, $discuz_uin) = empty($auth) || count($auth) < 3 ? array('', '') : $auth;
+            list($discuz_pw, $discuz_uid, $discuz_uin) = empty($auth) || count($auth) < 2 ? array('', '') : $auth;
 
             if ($discuz_uid) {
                 $user = getuserbyuid($discuz_uid);
             }
-
+/*
             if ($user['uin'] != $discuz_uin) {
                 dsetcookie('auth', '', '-1');
                 showmessage('抱歉，您需要重新登录验证自己的帐号');
             } elseif ($user['status'] == '1' && CURMODULE !== 'active') {
                 showmessage('抱歉，您需要验证激活自己的 QQ 身份后才能进行本操作');
             }
+*/
 
             if (!empty($user) && $user['password'] == $discuz_pw) {
                 $this->var['member'] = $user;

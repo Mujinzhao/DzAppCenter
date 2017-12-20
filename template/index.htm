@@ -42,7 +42,10 @@
       siteurl: '<?php echo $_G["siteurl"] ?>',
       ajaxapi: 'api.php?mod=',
       client_siteurl: '<?php echo $siteurl ?>',
-      client_siteuniqueid: '<?php echo $siteuniqueid ?>'
+      client_siteuniqueid: '<?php echo $siteuniqueid ?>',
+      uid: '<?php echo $_G["uid"]?>',
+      username: '<?php echo $_G["username"]?>',
+      gid: '<?php echo $_G["groupid"]?>'
   };
   function active_top_nav(mod) {
       jQuery('[name="navmenu"]').removeClass('active');

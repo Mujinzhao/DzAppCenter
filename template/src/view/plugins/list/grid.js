@@ -32,13 +32,13 @@ define(function(require){
     
     o.init = function(domid){
         var code = '<div id="grid-'+domid+'"></div>'+
-                   '<div id="pagebar-'+domid+'" style="margin-top:15px;"></div>';
+                   '<div id="pagebar-'+domid+'" style="margin:15px;"></div>';
         jQuery('#'+domid).html(code);
         gridid = 'grid-'+domid;
         store = new mwt.Store({
             proxy: new mwt.HttpProxy({
-                beforeLoad : store_before_load,
-                afterLoad  : store_after_load,
+                //beforeLoad : store_before_load,
+                //afterLoad  : store_after_load,
                 url        : ajax.getAjaxUrl("plugin&action=query")
             })
         });

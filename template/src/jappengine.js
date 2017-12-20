@@ -8,7 +8,8 @@ define(function(require){
         require('controller/help').conf,			//!< 帮助
         require('controller/admin').conf,			//!< 应用列表管理
         require('controller/adminapp').conf,		//!< 应用详情管理
-		require('controller/index').conf			//!< 首页
+		require('controller/index').conf,			//!< 首页
+		require('controller/login').conf			//!< 登录
 	];
 
 	var o={};

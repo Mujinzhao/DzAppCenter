@@ -20,6 +20,47 @@ EOF;
 
 $addtime = $modtime = date('Y-m-d H:i:s');
 
+// 用户表
+$table = DB::table('common_member');
+/*{{{*/
+$sql = "CREATE TABLE IF NOT EXISTS $table ".<<<EOF
+(
+ `uid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户ID',
+ `email` char(40) NOT NULL DEFAULT '' COMMENT '用户email',
+ `username` char(15) NOT NULL DEFAULT '' COMMENT '用户名',
+ `password` char(32) NOT NULL DEFAULT '' COMMENT '密码',
+ `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态',
+ `emailstatus` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'email状态',
+ `avatarstatus` tinyint(1) NOT NULL DEFAULT '0' COMMENT '头像状态',
+ `videophotostatus` tinyint(1) NOT NULL DEFAULT '0',
+ `adminid` tinyint(1) NOT NULL DEFAULT '0',
+ `groupid` smallint(6) unsigned NOT NULL DEFAULT '7' COMMENT '用户组ID',
+ `groupexpiry` int(10) unsigned NOT NULL DEFAULT '0',
+ `extgroupids` char(20) NOT NULL DEFAULT '',
+ `regdate` int(10) unsigned NOT NULL DEFAULT '0',
+ `credits` int(10) NOT NULL DEFAULT '0',
+ `notifysound` tinyint(1) NOT NULL DEFAULT '0',
+ `timeoffset` char(4) NOT NULL DEFAULT '',
+ `newpm` smallint(6) unsigned NOT NULL DEFAULT '0',
+ `newprompt` smallint(6) unsigned NOT NULL DEFAULT '0',
+ `accessmasks` tinyint(1) NOT NULL DEFAULT '0',
+ `allowadmincp` tinyint(1) NOT NULL DEFAULT '0',
+ `onlyacceptfriendpm` tinyint(1) NOT NULL DEFAULT '0',
+ `conisbind` tinyint(1) unsigned NOT NULL DEFAULT '0',
+ `freeze` tinyint(1) NOT NULL DEFAULT '0',
+ PRIMARY KEY (`uid`),
+ UNIQUE KEY `username` (`username`),
+ KEY `email` (`email`),
+ KEY `groupid` (`groupid`),
+ KEY `conisbind` (`conisbind`),
+ KEY `regdate` (`regdate`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT '用户主表'
+EOF;
+DB::query($sql);
+include_once libfile('function/member');
+userregister('admin','admin@null.null','123456');
+/*}}}*/
+
 // dzapp主表
 $table = DB::table('dzapp');
 /*{{{*/

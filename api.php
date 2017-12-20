@@ -6,7 +6,7 @@ $core = &core::instance();
 $core->init();
 
 $modules = array (
-    'plugin','admin','upload',
+    'plugin','admin','upload','member',
 );
 $mod = isset($_G['input']['mod']) ? $_G['input']['mod'] : '';
 if(!in_array($mod, $modules)) {
@@ -229,4 +229,3 @@ class validate
 
 }
 // vim600: sw=4 ts=4 fdm=marker syn=php
-

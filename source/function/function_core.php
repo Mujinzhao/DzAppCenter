@@ -197,7 +197,7 @@ function dheader($string, $replace = true, $http_response_code = 0) {
 function getuserbyuid($uid) {
     static $users = array();
     if (empty($users[$uid])) {
-        $users[$uid] = DB::fetch_first("SELECT * FROM " . DB::table('member') . " WHERE uid='$uid'");
+        $users[$uid] = DB::fetch_first("SELECT * FROM " . DB::table('common_member') . " WHERE uid='$uid'");
     }
     return $users[$uid];
 }
@@ -205,7 +205,7 @@ function getuserbyuid($uid) {
 function getuserbyuin($uin) {
     static $users = array();
     if (empty($users[$uin])) {
-        $users[$uin] = DB::fetch_first("SELECT * FROM " . DB::table('member') . " WHERE uin = '$uin'");
+        $users[$uin] = DB::fetch_first("SELECT * FROM " . DB::table('common_member') . " WHERE uin = '$uin'");
     }
     return $users[$uin];
 }
